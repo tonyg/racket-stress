@@ -4,7 +4,7 @@
 
 (require (planet tonyg/bitsyntax))
 
-(define outbound-length 8)
+(define outbound-length (string->number (vector-ref (current-command-line-arguments) 0)))
 (define packet (bit-string->bytes
 		(do ((i 0 (+ i 1))
 		     (acc (bytes) (bit-string-append acc (bit-string (i : bytes 4)))))
